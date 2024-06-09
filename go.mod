@@ -1,5 +1,5 @@
 // TODO: Переіменуйте на власний модуль.
-module github.com/roman-mazur/architecture-lab-2
+module github.com/karoll1naa/Lab2Goland
 
 go 1.22
 
