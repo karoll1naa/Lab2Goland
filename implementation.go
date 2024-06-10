@@ -6,7 +6,7 @@ import (
 )
 
 func Operators(sign string) bool {
-	return sign == "+" || sign == "-" || sign == "*" || sign == "/"
+	return sign == "+" || sign == "-" || sign == "*" || sign == "/" || sign == "^"
 }
 
 func PostfixToInfix(postfix string) (string, error) {
@@ -23,7 +23,7 @@ func PostfixToInfix(postfix string) (string, error) {
 			stack = stack[:len(stack)-1]
 			op1 := stack[len(stack)-1]
 			stack = stack[:len(stack)-1]
-			infix := fmt.Sprint("(%s %s %s)", op1, token, op2)
+			infix := fmt.Sprintf("(%s %s %s)", op1, token, op2)
 			stack = append(stack, infix)
 		}
 	}
