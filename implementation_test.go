@@ -27,7 +27,7 @@ func (s *PostfixToInfixSuite) TestPostfixToInfixSuite(c *gocheck.C) {
 		{
 			name:           "Test1",
 			input:          "2 3 + 4 5 * -",
-			expectedResult: "((2 + 3) - (4 * 5))",
+			expectedResult: "((2 + 3) - (4 * 5) !^%£$$^)",
 			expectedError:  nil,
 		},
 		{
