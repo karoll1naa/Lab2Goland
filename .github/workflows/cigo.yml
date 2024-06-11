@@ -1,0 +1,38 @@
+name: CI Go lab2
+
+on:
+
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Settings
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.22
+
+      - name: Build
+        run: make
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.22
+
+      - name: Test
+        run: make test
